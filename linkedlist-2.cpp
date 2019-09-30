@@ -34,9 +34,24 @@ cout<<temp->data<<endl;
 temp=temp->link
 }
 }
+  void delete_last()
+  {
+    node *current=new node;
+    node *previous=new node;
+    current=head;
+    while(current->next!=NULL)
+    {
+      previous=current;
+      current=current->next;	
+    }
+    tail=previous;
+    previous->next=NULL;
+    delete current;
+  }
 };
 int main(){
 list obj;
 obj.insert(15);
 obj.display()
+  obj.delete_list();
 }
